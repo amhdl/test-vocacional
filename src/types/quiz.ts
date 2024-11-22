@@ -2,8 +2,9 @@ export interface Question {
   id: number;
   text: string;
   category: VocationalCategory;
-  options: string[];
+  options: { label: string; score: number }[]; // Cambiado para incluir puntaje por opción
 }
+
 
 export interface Answer {
   questionId: number;

@@ -72,7 +72,7 @@ export default function App() {
   if (showResults) {
     return (
       <div className="min-h-screen bg-background p-8">
-        <Results results={calculateResults()} />
+        {/*<Results results={calculateResults()} />*/}
       </div>
     );
   }

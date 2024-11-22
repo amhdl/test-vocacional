@@ -29,7 +29,7 @@ export function QuestionCard({ question, selectedValue, onSelect }: QuestionCard
               "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             )}
           >
-            {option}
+            {option.label}
           </button>
         ))}
       </CardContent>
