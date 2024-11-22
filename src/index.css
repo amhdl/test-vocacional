@@ -135,3 +135,16 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+/* Ajuste adicional de estilos de colores */
+.bg-blue-500 {
+  background-color: #007bff;
+}
+
+.bg-blue-600 {
+  background-color: #0056b3;
+}
+
+.bg-blue-700:hover {
+  background-color: #003f7f;
+}

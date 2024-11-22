@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CategoryResult } from "@/types/quiz";
+import { cn } from "@/lib/utils";
 
 interface ResultsProps {
   results: CategoryResult[];

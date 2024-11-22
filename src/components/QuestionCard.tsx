@@ -10,44 +10,26 @@ interface QuestionCardProps {
 
 export function QuestionCard({ question, selectedValue, onSelect }: QuestionCardProps) {
   return (
-    <Card className="w-full max-w-2xl mx-auto">
+    <Card className="w-full max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <CardHeader>
-        <CardTitle className="text-xl font-semibold">{question.text}</CardTitle>
+        <CardTitle className="text-2xl font-bold text-gray-900 mb-4">
+          {question.text}
+        </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-3">
+      <CardContent className="space-y-4">
         {question.options.map((option, index) => (
           <button
             key={index}
             onClick={() => onSelect(index)}
             className={cn(
-              "w-full p-4 text-left rounded-lg transition-all duration-200",
-              "border-2 hover:border-primary/50 hover:bg-accent",
-              "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+              "w-full py-4 px-6 text-lg font-semibold text-white rounded-lg transition-colors duration-200",
               selectedValue === index
-                ? "border-primary bg-primary/5 shadow-sm"
-                : "border-muted bg-card"
+                ? "bg-green-600"
+                : "bg-blue-500 hover:bg-green-700",
+              "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             )}
           >
-            <div className="flex items-center gap-4">
-              <div className={cn(
-                "w-4 h-4 rounded-full border-2 flex items-center justify-center",
-                selectedValue === index
-                  ? "border-primary"
-                  : "border-muted-foreground"
-              )}>
-                {selectedValue === index && (
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                )}
-              </div>
-              <span className={cn(
-                "text-sm font-medium",
-                selectedValue === index
-                  ? "text-primary"
-                  : "text-foreground"
-              )}>
-                {option}
-              </span>
-            </div>
+            {option}
           </button>
         ))}
       </CardContent>
