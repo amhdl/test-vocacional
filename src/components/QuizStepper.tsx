@@ -12,8 +12,8 @@ export function QuizStepper({ currentStep, totalSteps }: QuizStepperProps) {
   return (
     <div className="w-full space-y-2">
       <div className="flex justify-between text-sm text-muted-foreground">
-        <span>Question {currentStep} of {totalSteps}</span>
-        <span>{Math.round(progress)}% Complete</span>
+        <span>Pregunta {currentStep} de {totalSteps}</span>
+        <span>{Math.round(progress)}% Completo</span>
       </div>
       <Progress value={progress} className="h-2" />
     </div>

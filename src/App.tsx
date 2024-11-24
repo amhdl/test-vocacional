@@ -100,14 +100,14 @@ export default function App() {
             disabled={currentStep === 1}
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back
+            Atrás
           </Button>
 
           <Button
             onClick={handleNext}
             disabled={!currentAnswer}
           >
-            {currentStep === questions.length ? 'Show Results' : 'Next'}
+            {currentStep === questions.length ? 'Mostrar Resultados' : 'Siguiente'}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
