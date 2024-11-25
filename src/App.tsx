@@ -33,7 +33,7 @@ export default function App() {
       }];
     });
   };
-
+/*
   const calculateResults = (): CategoryResult[] => {
     const categoryScores = Object.values(VocationalCategory).map(category => {
       const categoryAnswers = answers.filter(a => a.category === category);
@@ -50,7 +50,7 @@ export default function App() {
 
     return categoryScores.sort((a, b) => b.score - a.score).slice(0, 3);
   };
-
+*/
   const handleNext = () => {
     if (currentStep < questions.length) {
       setCurrentStep(prev => prev + 1);
