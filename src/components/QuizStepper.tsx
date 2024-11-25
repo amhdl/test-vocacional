@@ -7,7 +7,8 @@ interface QuizStepperProps {
 }
 
 export function QuizStepper({ currentStep, totalSteps }: QuizStepperProps) {
-  const progress = (currentStep / totalSteps) * 100;
+  
+  const progress = ((currentStep-1) / totalSteps) * 100;
 
   return (
     <div className="w-full space-y-2">

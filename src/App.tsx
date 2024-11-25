@@ -107,7 +107,7 @@ export default function App() {
             onClick={handleNext}
             disabled={!currentAnswer}
           >
-            {currentStep === questions.length ? 'Mostrar Resultados' : 'Siguiente'}
+            {currentStep === questions.length ? 'Finalizar' : 'Siguiente'}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
