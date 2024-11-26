@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { QuizStepper } from '@/components/QuizStepper';
 import { QuestionCard } from '@/components/QuestionCard';
-import { Results } from '@/components/Results';
+import  ResultForm  from '@/components/ResultForm';
 import { questions, categoryDescriptions } from '@/data/questions';
 import { Answer, CategoryResult, VocationalCategory } from '@/types/quiz';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -70,9 +70,12 @@ export default function App() {
     : undefined;
 
   if (showResults) {
+    
+ 
     return (
       <div className="min-h-screen bg-background p-8">
-        <Results respuestasUsuario={answers.map(a => a.score)} />
+        <ResultForm respuestasUsuario={answers.map(a => a.score)} />
+      {/*  <Results respuestasUsuario={answers.map(a => a.score)} />*/}
       </div>
     );
   }
