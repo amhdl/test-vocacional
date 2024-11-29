@@ -24,7 +24,9 @@ export const questions: Question[] = [
       { label: "A menudo", score: 3 },
       { label: "Siempre", score: 4 }
     ]
-  },
+  }
+  /*
+  ,
   {
     id: 3,
     text: "Se me da bien resolver problemas de una manera rápida y eficaz",
@@ -243,7 +245,7 @@ export const questions: Question[] = [
       { label: "Siempre", score: 4 }
     ]
   }
-  
+*/  
 ];
 
 
