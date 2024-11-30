@@ -10,7 +10,7 @@ interface ResultsProps {
 
 
 
-export function generarResultadosHTML({ respuestasUsuario }: ResultsProps) {
+export function generarResultadosHTML( respuestasUsuario: number[]) {
   // Calcular los puntajes por categoría utilizando la función
   const puntajes = calcularPuntajes(respuestasUsuario, questions);
 
