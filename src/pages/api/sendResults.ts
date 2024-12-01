@@ -22,7 +22,7 @@ console.log('apiSendResult');
         // Enviar correo electrónico con los datos del formulario
         await resend.emails.send({
             from: 'info@brujula.uy', // Cambia a tu correo o un correo autorizado
-            to: 'alexanderh24@gmail.com', // Cambia al correo donde deseas recibir los datos
+            to: email, // Cambia al correo donde deseas recibir los datos
             subject: 'Nuevo Formulario Recibido',
             html: htmlResultados,
           });

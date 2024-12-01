@@ -15,6 +15,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color-oeste: #6098a8; 
+  --color-norte: #f0d7b8; 
+  --color-este: #cde1e8; 
+  --color-sur: #d8a167; 
 }
 
 a {
@@ -147,4 +152,43 @@ button:focus-visible {
 
 .bg-blue-700:hover {
   background-color: #003f7f;
+}
+
+
+/* Fondo personalizado para la tarjeta */
+.question-card {
+  background-image: url('/images/fondoBrujula.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Estilo para los colores */
+.text-norte {
+  color: var(--color-norte);
+}
+
+
+.bg-oeste {
+  background-color: var(--color-oeste);
+}
+
+.text-oeste {
+  color: var(--color-oeste);
+}
+
+.bg-este {
+  background-color: var(--color-este);
+}
+
+.text-este {
+  color: var(--color-este);
+}
+
+.bg-sur {
+  background-color: var(--color-sur);
+}
+
+.text-sur {
+  color: var(--color-sur);
 }
