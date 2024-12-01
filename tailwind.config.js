@@ -80,5 +80,7 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+ // plugins: [require('tailwindcss-animate')],
 };
+import plugin from 'tailwindcss/plugin';
+

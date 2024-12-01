@@ -8,7 +8,9 @@ const resend = new Resend('re_Rm3kxoac_6zNDW5Zr9kY9Xt2Tco8Poj5V');
 
 //export default async function sendResults(req: NextApiRequest, res: NextApiResponse) {
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+    req: NextApiRequest,
+     res: NextApiResponse) {
 
 console.log('apiSendResult');
 
@@ -16,15 +18,22 @@ console.log('apiSendResult');
     const { email, name, htmlResultados } = req.body;
 
     try {
-        console.log('antes de enviar el mail');
+        console.log('htmlResultados'+htmlResultados);
         // Enviar correo electrónico con los datos del formulario
         await resend.emails.send({
-            from: 'admin@brujula.uy', // Cambia a tu correo o un correo autorizado
-            to: 'admin@brujula.uy', // Cambia al correo donde deseas recibir los datos
+            from: 'info@brujula.uy', // Cambia a tu correo o un correo autorizado
+            to: 'alexanderh24@gmail.com', // Cambia al correo donde deseas recibir los datos
             subject: 'Nuevo Formulario Recibido',
             html: htmlResultados,
           });
-
+/*
+          const response = await resend.emails.send({
+            from: 'info@brujula.uy',
+            to: 'alexanderh24@gmail.com',
+            subject: 'Hola Mundo',
+            html: '<h1>Hola desde Resend API</h1><p>Este es un mensaje enviado desde tu API.</p>',
+          });
+*/
       res.status(200).json({ message: 'Resultados enviados con éxito' });
     } catch (error) {
       res.status(500).json({ message: 'Error enviando resultados' });

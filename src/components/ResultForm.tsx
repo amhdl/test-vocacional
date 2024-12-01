@@ -26,15 +26,15 @@ export default function ResultForm({ respuestasUsuario }: ResultFormProps ) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const htmlResultados = 'html'; 
-    //const htmlResultados = generarResultadosHTML([4, 2, 5, 3, 1,4, 2, 5, 3, 1,4, 2, 5, 3, 1,4, 2, 5, 3, 1]); 
+    //const htmlResultados = 'html'; 
+    const htmlResultados = generarResultadosHTML([4, 2, 5, 3, 1,4, 2, 5, 3, 1,4, 2, 5, 3, 1,4, 2, 5, 3, 1]); 
     //const htmlResultados = respuestasUsuario;
 
 console.log(htmlResultados);
     const data = {
       name,
       email,
-      respuestasUsuario,
+      htmlResultados,
     };
 
     console.log(data);
