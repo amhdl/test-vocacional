@@ -163,6 +163,7 @@ button:focus-visible {
   background-repeat: no-repeat;
 }
 
+
 /* Estilo para los colores */
 .text-norte {
   color: var(--color-norte);
