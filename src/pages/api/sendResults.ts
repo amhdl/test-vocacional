@@ -23,7 +23,7 @@ console.log('apiSendResult');
         await resend.emails.send({
             from: 'info@brujula.uy', // Cambia a tu correo o un correo autorizado
             to: email, // Cambia al correo donde deseas recibir los datos
-            subject: 'Nuevo Formulario Recibido',
+            subject: 'Resultado de test vocacional',
             html: htmlResultados,
           });
 /*
