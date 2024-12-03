@@ -6,11 +6,11 @@ export const questions: Question[] = [
     text: "Cuando trabajo bajo presión, me pongo nervioso/a",
     category: VocationalCategory.NEGOCIOS_FINANZAS,
     options: [
-      { label: "Nunca", score: 0 },
-      { label: "Rara vez", score: 1 },
+      { label: "Nunca", score: 4 },
+      { label: "Rara vez", score: 3 },
       { label: "A veces", score: 2 },
-      { label: "A menudo", score: 3 },
-      { label: "Siempre", score: 4 }
+      { label: "A menudo", score: 1},
+      { label: "Siempre", score: 0 }
     ]
   },
   {
@@ -25,7 +25,7 @@ export const questions: Question[] = [
       { label: "Siempre", score: 4 }
     ]
   }
-  /*
+  
   ,
   {
     id: 3,
@@ -130,11 +130,11 @@ export const questions: Question[] = [
     text: "Soy una persona bastante despistada",
     category: VocationalCategory.SALUD_BIOLOGIA,
     options: [
-         { label: "Nunca", score: 0 },
-     { label: "Rara vez", score: 1 },
+         { label: "Nunca", score: 4 },
+     { label: "Rara vez", score: 3 },
       { label: "A veces", score: 2 },
-      { label: "A menudo", score: 3 },
-      { label: "Siempre", score: 4 }
+      { label: "A menudo", score: 1 },
+      { label: "Siempre", score: 0 }
     ]
   },
   {
@@ -245,7 +245,7 @@ export const questions: Question[] = [
       { label: "Siempre", score: 4 }
     ]
   }
-*/  
+ 
 ];
 
 
