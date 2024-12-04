@@ -164,6 +164,14 @@ button:focus-visible {
 }
 
 
+.info-page {
+  background-image: url('/images/fondoBrujula.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;  
+  text-align: center;
+}
+
 .brujula-oeste, .post-gotas{
   background-color: var(--color-oeste);
 }

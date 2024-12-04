@@ -124,10 +124,10 @@ export default function ResultForm({ respuestasUsuario, onBack, onFinish }: Resu
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-este p-6">
-      <form
+    <div className="info-page flex flex-col items-center justify-center min-h-screen bg-este p-6">
+      <form 
         onSubmit={handleSubmit}
-        className="w-full max-w-md space-y-4 bg-white p-6 rounded-lg shadow-md"
+        className="bg-este w-full max-w-md space-y-4 bg-white p-6 rounded-lg shadow-md"
       >
         <h2 className="text-2xl font-bold text-oeste text-center mb-4">
           Ingresa tus datos para recibir tus resultados
@@ -139,6 +139,7 @@ export default function ResultForm({ respuestasUsuario, onBack, onFinish }: Resu
           placeholder="Nombre"
           required
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-oeste"
+          
         />
         <input
           type="email"

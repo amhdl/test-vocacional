@@ -1,6 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookSquare, faInstagram, faTiktok, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
+import { faFacebookSquare, faInstagram,  faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 
 interface FinalPageProps {
@@ -30,21 +32,21 @@ export function FinalPage({ onRestart }: FinalPageProps) {
     <a href="https://www.instagram.com/orientacionvocacionalbrujula/" target="_blank" rel="noopener noreferrer">
       <FontAwesomeIcon icon={faInstagram} size="2x" className="text-white hover:text-gray-200" />
     </a>
-    <a href="https://www.tiktok.com/@brujulaotientacion" target="_blank" rel="noopener noreferrer">
-      <FontAwesomeIcon icon={faTiktok} size="2x" className="text-white hover:text-gray-200" />
+    <a href="mailto:info@brujula.uy" target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon={faEnvelope } size="2x" className="text-white hover:text-gray-200" />
     </a>
     <a href="https://api.whatsapp.com/send?phone=59891916894&text=Hola%21%20" target="_blank" rel="noopener noreferrer">
       <FontAwesomeIcon icon={faWhatsapp} size="2x" className="text-white hover:text-gray-200" />
     </a>
   </div>
 
-
+{/*}
       <button
         onClick={onRestart}
         className="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold text-lg rounded-lg shadow-md hover:bg-blue-700 transition"
       >
         Reiniciar Test
-      </button>
+      </button>*/}
     </div>
   );
 }
