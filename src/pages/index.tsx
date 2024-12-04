@@ -215,8 +215,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-background p-8">
       <div className="max-w-2xl mx-auto space-y-8">
-        <QuizStepper currentStep={currentStep} totalSteps={questions.length} />
-
+        
         {currentQuestion && (
           <QuestionCard
             question={currentQuestion}
@@ -224,6 +223,7 @@ export default function App() {
             onSelect={handleAnswer}
           />
         )}
+<QuizStepper currentStep={currentStep} totalSteps={questions.length} />
 
         <div className="flex justify-between">
           <Button
