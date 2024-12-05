@@ -25,7 +25,7 @@ export const questions: Question[] = [
       { label: "Siempre", score: 4 }
     ]
   }
-     
+     /*
 
   
   ,
@@ -247,7 +247,7 @@ export const questions: Question[] = [
       { label: "Siempre", score: 4 }
     ]
   }
- 
+ */
 ];
 
 

@@ -12,6 +12,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
+
 export default function App() {
   const [currentStep, setCurrentStep] = useState(0); // 0 = página inicial
   const [answers, setAnswers] = useState<Answer[]>([]);
@@ -106,31 +107,48 @@ export default function App() {
   }
 
   // Test
-return (
-  <div className="min-h-screen bg-background p-8">
-    <div className="max-w-2xl mx-auto space-y-8">
-      
+  return (
+    <div className="min-h-screen bg-background p-8 ">
+       <header className="bg-white shadow-sm max-w-[600px]">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <a href="https://brujula.uy">
+                <img src="images/logoBrujula.svg" alt="Brújula Logo" className="h-logo w-auto" />
+              </a>
+              <div className="ml-4">
+                <h1 className="hey-gotcha-font text-4xl text-gray-900">Brújula</h1>
+                <p className="text-xl text-gray-600">Acompañando tu camino profesional</p>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div className="max-w-2xl mx-auto space-y-8 max-w-[600px]">
 
-      {currentQuestion && (
-        <QuestionCard
-          question={currentQuestion}
-          selectedValue={currentAnswer?.score}
-          onSelect={handleAnswer}
-          onNext={handleNext} // Pasamos handleNext para avanzar automáticamente
-        />
-      )}
 
-<div className="flex items-center space-x-4">
-        <button
-          onClick={handleBack}
-          disabled={currentStep === 1}
-          className="p-2 text-white bg-sur hover:bg-oeste/80 focus:ring-2 focus:ring-offset-2 focus:ring-oeste"
-        >
-          <FontAwesomeIcon icon={faChevronLeft} size="lg" />
-        </button>
-        <QuizStepper currentStep={currentStep} totalSteps={questions.length} />
+        {currentQuestion && (
+          <QuestionCard
+            question={currentQuestion}
+            selectedValue={currentAnswer?.score}
+            onSelect={handleAnswer}
+            onNext={handleNext} // Pasamos handleNext para avanzar automáticamente
+          />
+        )}
+
+        <footer className="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-t z-10 max-w-[600px]">
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={handleBack}
+              disabled={currentStep === 1}
+              className="p-2 text-white bg-sur hover:bg-oeste/80 focus:ring-2 focus:ring-offset-2 focus:ring-oeste"
+            >
+              <FontAwesomeIcon icon={faChevronLeft} size="lg" />
+            </button>
+            <QuizStepper currentStep={currentStep} totalSteps={questions.length} />
+          </div>
+        </footer>
       </div>
     </div>
-  </div>
-);
+  );
 }

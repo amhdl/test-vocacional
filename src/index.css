@@ -55,7 +55,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+button:lg:hover {
   border-color: #646cff;
 }
 button:focus,
@@ -139,6 +139,15 @@ button:focus-visible {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.h-logo {
+  height: 7rem;
+  }
+  
+.py-1 {
+  padding-top : 0.2rem;
+  padding-bottom : 0.2rem;
 }
 
 /* Ajuste adicional de estilos de colores */

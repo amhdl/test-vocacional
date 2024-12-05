@@ -95,7 +95,7 @@ export default function ResultForm({ respuestasUsuario, onBack, onFinish }: Resu
     e.preventDefault();
     setIsSubmitting(true);
 
-    const htmlResultados = generarResultadosHTML(respuestasUsuario);
+    const htmlResultados = generarResultadosHTML(name , respuestasUsuario);
 
     const data = {
       name,
