@@ -1,111 +1,3 @@
-/*import { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { QuizStepper } from '@/components/QuizStepper';
-import { QuestionCard } from '@/components/QuestionCard';
-import  ResultForm  from '@/components/ResultForm';
-import { questions, categoryDescriptions } from '@/data/questions';
-import { Answer, CategoryResult, VocationalCategory } from '@/types/quiz';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-
-export default function App() {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [answers, setAnswers] = useState<Answer[]>([]);
-  const [showResults, setShowResults] = useState(false);
-
-  const currentQuestion = questions.find(q => q.id === currentStep);
-
-  const handleAnswer = (score: number) => {
-    if (!currentQuestion) return;
-
-    setAnswers(prev => {
-      const existing = prev.find(a => a.questionId === currentQuestion.id);
-      if (existing) {
-        return prev.map(a =>
-          a.questionId === currentQuestion.id
-            ? { ...a, score }
-            : a
-        );
-      }
-      return [...prev, {
-        questionId: currentQuestion.id,
-        category: currentQuestion.category,
-        score
-      }];
-    });
-  };
-
-  
-  const handleNext = () => {
-    if (currentStep < questions.length) {
-      setCurrentStep(prev => prev + 1);
-    } else {
-      setShowResults(true);
-    }
-  };
-
-  const handleBack = () => {
-    if (currentStep > 1) {
-      setCurrentStep(prev => prev - 1);
-    }
-  };
-
-  const currentAnswer = currentQuestion
-    ? answers.find(a => a.questionId === currentQuestion.id)
-    : undefined;
-
-    if (showResults) {
-        return (
-          <div className="min-h-screen bg-background p-8">
-            <ResultForm
-              respuestasUsuario={answers.map(a => a.score)}
-              onBack={() => {
-                setShowResults(false); // Vuelve al test desde los resultados
-                setCurrentStep(questions.length); // Regresa al último paso del test
-              }}
-            />
-          </div>
-        );
-      }
-      
-
-  return (
-    <div className="min-h-screen bg-background p-8">
-      <div className="max-w-2xl mx-auto space-y-8">
-        <QuizStepper
-          currentStep={currentStep}
-          totalSteps={questions.length}
-        />
-        
-        {currentQuestion && (
-          <QuestionCard
-            question={currentQuestion}
-            selectedValue={currentAnswer?.score}
-            onSelect={handleAnswer}
-          />
-        )}
-
-        <div className="flex justify-between">
-          <Button
-            variant="outline"
-            onClick={handleBack}
-            disabled={currentStep === 1}
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Atrás
-          </Button>
-
-          <Button
-            onClick={handleNext}
-            disabled={!currentAnswer}
-          >
-            {currentStep === questions.length ? 'Finalizar' : 'Siguiente'}
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-}*/
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -117,6 +9,8 @@ import { FinalPage } from "@/components/FinalPage";
 import { questions } from "@/data/questions";
 import { Answer } from "@/types/quiz";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function App() {
   const [currentStep, setCurrentStep] = useState(0); // 0 = página inicial
@@ -212,35 +106,31 @@ export default function App() {
   }
 
   // Test
-  return (
-    <div className="min-h-screen bg-background p-8">
-      <div className="max-w-2xl mx-auto space-y-8">
-        
-        {currentQuestion && (
-          <QuestionCard
-            question={currentQuestion}
-            selectedValue={currentAnswer?.score}
-            onSelect={handleAnswer}
-          />
-        )}
-<QuizStepper currentStep={currentStep} totalSteps={questions.length} />
+return (
+  <div className="min-h-screen bg-background p-8">
+    <div className="max-w-2xl mx-auto space-y-8">
+      
 
-        <div className="flex justify-between">
-          <Button
-            variant="outline"
-            onClick={handleBack}
-            disabled={currentStep === 1}
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Atrás
-          </Button>
+      {currentQuestion && (
+        <QuestionCard
+          question={currentQuestion}
+          selectedValue={currentAnswer?.score}
+          onSelect={handleAnswer}
+          onNext={handleNext} // Pasamos handleNext para avanzar automáticamente
+        />
+      )}
 
-          <Button onClick={handleNext} disabled={!currentAnswer}>
-            {currentStep === questions.length ? "Finalizar" : "Siguiente"}
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
+<div className="flex items-center space-x-4">
+        <button
+          onClick={handleBack}
+          disabled={currentStep === 1}
+          className="p-2 text-white bg-sur hover:bg-oeste/80 focus:ring-2 focus:ring-offset-2 focus:ring-oeste"
+        >
+          <FontAwesomeIcon icon={faChevronLeft} size="lg" />
+        </button>
+        <QuizStepper currentStep={currentStep} totalSteps={questions.length} />
       </div>
     </div>
-  );
+  </div>
+);
 }
