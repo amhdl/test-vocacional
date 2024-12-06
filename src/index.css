@@ -22,6 +22,19 @@
   --color-sur: #d8a167; 
 }
 
+
+@font-face {
+  font-family: 'Hey Gotcha';
+  src: url('/fonts/hey-gotcha-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hey-gotcha-font {
+  font-family: 'Hey Gotcha', sans-serif;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;

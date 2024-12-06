@@ -15,14 +15,14 @@ export default async function handler(
 console.log('apiSendResult');
 
   if (req.method === 'POST') {
-    const { email, name, htmlResultados } = req.body;
+    const { userEmail, name, htmlResultados } = req.body;
 
     try {
-        console.log('htmlResultados'+htmlResultados);
+        console.log('userEmail'+userEmail);
         // Enviar correo electrónico con los datos del formulario
         await resend.emails.send({
             from: 'info@brujula.uy', // Cambia a tu correo o un correo autorizado
-            to: email, // Cambia al correo donde deseas recibir los datos
+            to: userEmail, // Cambia al correo donde deseas recibir los datos
             subject: 'Brújula - Resultado de test vocacional',
             html: htmlResultados,
           });
