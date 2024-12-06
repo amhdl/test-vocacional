@@ -43,7 +43,7 @@ export function generarResultadosHTML( name: string , respuestasUsuario: number[
         <div style="border: 1px solid #ccc; padding: 16px; margin: 8px 0; border-radius: 8px; background: #f9f9f9;">
           <h3 style="display: flex; justify-content: space-between; font-size: 18px; margin-bottom: 8px;">
             <span>${result.category}</span>
-            <span style="color: #777;"> Puntaje: ${result.score}</span>
+            <span style="color: #777;">&nbsp; Puntaje: ${result.score}</span>
           </h3>
           <p style="color: #555; margin: 0;">${result.description}</p>
         </div>
