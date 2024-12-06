@@ -34,7 +34,7 @@ export function generarResultadosHTML( name: string , respuestasUsuario: number[
       <h1 style="text-align: center; font-size: 28px; font-weight: bold; color: #0056b3;">Hola ${name}!</h1>
       <p style="text-align: center; font-size: 16px; margin: 16px 0;">
         Estos son los resultados de tu primer test de orientación vocacional. Este test es una herramienta inicial para identificar características clave que nos ayudarán en el proceso que puedes iniciar con 
-        <strong>Brújula Orientación Vocacional</strong>. ¡Estamos aquí para acompañarte en tu camino!
+        <strong><a href="https://brujula.uy" target="_blank" style="color: #0056b3; text-decoration: none;">Brújula - Orientación Vocacional</a></strong>. ¡Estamos aquí para acompañarte en tu camino!
       </p>
   
       <!-- Resultados principales -->
@@ -56,8 +56,10 @@ export function generarResultadosHTML( name: string , respuestasUsuario: number[
         <div>
           <a href="https://www.instagram.com/orientacionvocacionalbrujula/" target="_blank" style="color: #0056b3; text-decoration: none; margin-right: 16px;">Instagram</a>
           <a href="https://www.facebook.com/profile.php?id=61568201455483"" target="_blank" style="color: #0056b3; text-decoration: none; margin-right: 16px;">Facebook</a>
-          <a href="mailto:info@brujula.uy" target="_blank" style="color: #0056b3; text-decoration: none;">info@brujula.uy</a>
-          <a href="href="https://api.whatsapp.com/send?phone=59891916894&text=Hola%21%20"" target="_blank" style="color: #0056b3; text-decoration: none;">091916894</a>
+          <a href="mailto:info@brujula.uy" target="_blank" style="color: #0056b3; text-decoration: none;">info@brujula.uy</a>          
+          <br />
+          <a href="https://brujula.uy" target="_blank" style="color: #0056b3; text-decoration: none;">www.brujula.uy</a> - 
+          <a href="https://api.whatsapp.com/send?phone=59891916894&text=Hola%21%20" target="_blank" style="color: #0056b3; text-decoration: none;">091916894</a>
           
         </div>
       </div>
@@ -94,7 +96,7 @@ export function Results({ respuestasUsuario }: ResultsProps) {
           <CardHeader>
             <CardTitle className="flex justify-between items-center">
               <span>{result.category}</span>
-              <span className="text-muted-foreground">Puntaje: {result.score}</span>
+              <span className="text-muted-foreground"> Puntaje: {result.score}</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
