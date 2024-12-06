@@ -67,7 +67,7 @@ export function FinalPage({ email, onRestart, onResend }: FinalPageProps) {
           />
         </a>
       </div>
-
+      
       <div className="flex space-x-4">
         {/*<button
           onClick={onRestart}
@@ -81,6 +81,12 @@ export function FinalPage({ email, onRestart, onResend }: FinalPageProps) {
         >
           Reenviar Correo
   </button>*/}
+
+        
+        <a href="https://brujula.uy" target="_blank"  className="text-white hover:text-gray-200">
+          www.brujula.uy
+          </a>
+          
       </div>
     </div>
   );
