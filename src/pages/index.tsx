@@ -152,7 +152,7 @@ export default function App() {
           />
         )}
 
-        <footer className="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-t z-10 max-w-[600px]">
+<footer className="fixed bottom-4 left-0 right-0 bg-white p-4 shadow-t z-10 max-w-[600px]">
           <div className="flex items-center space-x-4">
             <button
               onClick={handleBack}

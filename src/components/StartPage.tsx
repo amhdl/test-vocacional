@@ -11,7 +11,7 @@ export function StartPage({ onStart }: StartPageProps) {
         <h1 className="text-4xl font-bold text-gray-900">
           Bienvenido al Test de Orientación Vocacional
         </h1>
-        <p className="text-lg text-gray-700 max-w-xl">
+        <p className="mt-12 text-lg text-gray-700 max-w-xl">
           Este es un test <span className="font-semibold text-gray-800">básico</span> diseñado para explorar algunos aspectos de tus intereses y habilidades.
           No es un diagnóstico definitivo, pero es una herramienta inicial para ayudarte a comenzar un proceso más profundo de orientación vocacional.
         </p>
