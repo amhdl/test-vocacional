@@ -31,7 +31,7 @@ export function generarResultadosHTML( name: string , respuestasUsuario: number[
   const htmlContent = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.5; color: #333;">
       <!-- Saludo inicial -->
-      <h1 style="text-align: center; font-size: 28px; font-weight: bold; color: #0056b3;">Hola!</h1>
+      <h1 style="text-align: center; font-size: 28px; font-weight: bold; color: #0056b3;">Hola ${name}!</h1>
       <p style="text-align: center; font-size: 16px; margin: 16px 0;">
         Estos son los resultados de tu primer test de orientación vocacional. Este test es una herramienta inicial para identificar características clave que nos ayudarán en el proceso que puedes iniciar con 
         <strong>Brújula Orientación Vocacional</strong>. ¡Estamos aquí para acompañarte en tu camino!
@@ -54,9 +54,11 @@ export function generarResultadosHTML( name: string , respuestasUsuario: number[
         <h3 style="font-size: 20px; color: #0056b3; font-weight: bold;">¡Estamos para ayudarte!</h3>
         <p style="margin: 8px 0;">Si deseas continuar con el proceso, no dudes en contactarnos.</p>
         <div>
-          <a href="https://www.instagram.com/brujula" target="_blank" style="color: #0056b3; text-decoration: none; margin-right: 16px;">Instagram</a>
-          <a href="https://www.facebook.com/brujula" target="_blank" style="color: #0056b3; text-decoration: none; margin-right: 16px;">Facebook</a>
-          <a href="mailto:contacto@brujula.com" target="_blank" style="color: #0056b3; text-decoration: none;">Correo</a>
+          <a href="https://www.instagram.com/orientacionvocacionalbrujula/" target="_blank" style="color: #0056b3; text-decoration: none; margin-right: 16px;">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61568201455483"" target="_blank" style="color: #0056b3; text-decoration: none; margin-right: 16px;">Facebook</a>
+          <a href="mailto:info@brujula.uy" target="_blank" style="color: #0056b3; text-decoration: none;">info@brujula.uy</a>
+          <a href="href="https://api.whatsapp.com/send?phone=59891916894&text=Hola%21%20"" target="_blank" style="color: #0056b3; text-decoration: none;">091916894</a>
+          
         </div>
       </div>
     </div>

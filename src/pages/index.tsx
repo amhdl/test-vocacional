@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { QuizStepper } from "@/components/QuizStepper";
@@ -9,15 +8,15 @@ import { FinalPage } from "@/components/FinalPage";
 import { questions } from "@/data/questions";
 import { Answer } from "@/types/quiz";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function App() {
   const [currentStep, setCurrentStep] = useState(0); // 0 = página inicial
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [showResults, setShowResults] = useState(false);
   const [showFinalPage, setShowFinalPage] = useState(false); // Estado para FinalPage
+  const [userEmail, setUserEmail] = useState(""); // Email del usuario
 
   const currentQuestion = questions.find((q) => q.id === currentStep);
 
@@ -60,7 +59,8 @@ export default function App() {
     setCurrentStep(1); // Cambia al primer paso del test
   };
 
-  const handleFinish = () => {
+  const handleFinish = (email: string) => {
+    setUserEmail(email); // Guarda el correo proporcionado
     setShowResults(false);
     setShowFinalPage(true); // Muestra la página final
   };
@@ -72,6 +72,12 @@ export default function App() {
     setShowFinalPage(false);
   };
 
+  const resendEmail = () => {
+    // Aquí puedes agregar la lógica para reenviar el correo
+    console.log(`Reenviando resultados a ${userEmail}`);
+    alert(`Se han reenviado los resultados a ${userEmail}`);
+  };
+
   const currentAnswer = currentQuestion
     ? answers.find((a) => a.questionId === currentQuestion.id)
     : undefined;
@@ -80,7 +86,7 @@ export default function App() {
   if (showResults) {
     return (
       <div className="min-h-screen bg-background p-8">
-        <ResultForm
+        <ResultForm 
           respuestasUsuario={answers.map((a) => a.score)}
           onBack={() => {
             setShowResults(false);
@@ -96,7 +102,11 @@ export default function App() {
   if (showFinalPage) {
     return (
       <div className="min-h-screen bg-background p-8">
-        <FinalPage onRestart={restartTest} />
+        <FinalPage
+          email={userEmail}
+          onRestart={restartTest}
+          onResend={resendEmail} // Pasa la función para reenviar el correo
+        />
       </div>
     );
   }
@@ -108,25 +118,31 @@ export default function App() {
 
   // Test
   return (
-    <div className="min-h-screen bg-background p-8 ">
-       <header className="bg-white shadow-sm max-w-[600px]">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div className="min-h-screen bg-background p-2 ">
+      <header className="bg-white shadow-sm max-w-[600px]">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <a href="https://brujula.uy">
-                <img src="images/logoBrujula.svg" alt="Brújula Logo" className="h-logo w-auto" />
+                <img
+                  src="images/logoBrujula.svg"
+                  alt="Brújula Logo"
+                  className="h-logo w-auto"
+                />
               </a>
               <div className="ml-4">
-                <h1 className="hey-gotcha-font text-4xl text-gray-900">Brújula</h1>
-                <p className="text-xl text-gray-600">Acompañando tu camino profesional</p>
+                <h1 className="hey-gotcha-font text-4xl text-gray-900">
+                  Brújula
+                </h1>
+                <p className="text-xl text-gray-600">
+                  Acompañando tu camino profesional
+                </p>
               </div>
             </div>
           </div>
         </nav>
       </header>
       <div className="max-w-2xl mx-auto space-y-8 max-w-[600px]">
-
-
         {currentQuestion && (
           <QuestionCard
             question={currentQuestion}
@@ -145,7 +161,10 @@ export default function App() {
             >
               <FontAwesomeIcon icon={faChevronLeft} size="lg" />
             </button>
-            <QuizStepper currentStep={currentStep} totalSteps={questions.length} />
+            <QuizStepper
+              currentStep={currentStep}
+              totalSteps={questions.length}
+            />
           </div>
         </footer>
       </div>
